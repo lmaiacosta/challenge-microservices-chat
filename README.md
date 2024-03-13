@@ -1,4 +1,4 @@
-# piece-of-cake-microservices-chat
+# challenge-microservices-chat
 
 ## Desafio ENTERness
 Olá Desenvolvedor,

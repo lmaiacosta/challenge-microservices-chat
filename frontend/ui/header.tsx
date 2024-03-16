@@ -18,17 +18,20 @@ export default function Header() {
           </Link>
           <p className="pt-4">and talk!</p>
         </div>
-        <h1 className=" pt-10 text-center font-extrabold sm:pt-0">
-          Chat Microservice <br /> Docker Next.js Nest.js Redis MySQL Kafka{" "}
-          <br />
-        </h1>
+        <Link href="/">
+          <h1 className=" pt-10 text-center font-extrabold sm:pt-0">
+            <p>Chat Microservice </p>
+            {/* <br /> */}
+            Docker Next.js Nest.js Redis MySQL Kafka{" "}
+          </h1>
+        </Link>
         <div className="fixed bottom-0 left-0 flex w-full items-end justify-center bg-gradient-to-t from-white via-white lg:static lg:h-auto lg:w-auto lg:bg-none dark:from-black dark:via-black">
           {/* By Leonardo Maia Costa */}
 
           <div className="flex flex-row justify-center gap-2">
             <Link
               className="pointer-events-none flex place-items-center items-center gap-2 space-x-2 rounded bg-blue-600  p-3 font-semibold text-white lg:pointer-events-auto "
-              href="https://github.com/lmaiacosta"
+              href="https://www.linkedin.com/in/leonardo-maia-costa/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -85,30 +88,7 @@ export default function Header() {
                 priority
               />
             </Link>
-
-            {/* <button className="inline-flex items-center space-x-2 rounded bg-red-500 p-2 font-semibold text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  role="img"
-                  className="w-5"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <g fill="none">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12c6.627 0 12-5.373 12-12S18.627 0 12 0zm.14 19.018c-3.868 0-7-3.14-7-7.018c0-3.878 3.132-7.018 7-7.018c1.89 0 3.47.697 4.682 1.829l-1.974 1.978v-.004c-.735-.702-1.667-1.062-2.708-1.062c-2.31 0-4.187 1.956-4.187 4.273c0 2.315 1.877 4.277 4.187 4.277c2.096 0 3.522-1.202 3.816-2.852H12.14v-2.737h6.585c.088.47.135.96.135 1.474c0 4.01-2.677 6.86-6.72 6.86z"
-                      fill="currentColor"
-                    />
-                  </g>
-                </svg>
-              </button> */}
           </div>
-
-          {/* https://www.linkedin.com/in/leonardo-maia-costa/ */}
         </div>
       </div>
     </header>

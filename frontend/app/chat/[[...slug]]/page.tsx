@@ -3,9 +3,10 @@ import IncomeMessage from "@/ui/income-message";
 import OutcomeMessage from "@/ui/outcome-message";
 import Image from "next/image";
 import Link from "next/link";
+import { Inter } from "next/font/google";
 import { useState } from "react";
 import InputEmoji from "react-input-emoji";
-
+const inter = Inter({ subsets: ["latin"] });
 const chats = [
   {
     id: 1,
@@ -53,6 +54,8 @@ const chat = {
   id: 1,
   name: "Black Holes",
   slug: "black-holes",
+  avatar: "https://source.unsplash.com/L2cxSuKWbpo/600x600",
+  createdAt: "2023-01-23T13:23Z",
   author: {
     name: "Leonardo Maia Costa",
     email: "lmaiacosta@gmail.com",
@@ -129,16 +132,9 @@ export default function Room({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      {/* <!-- This is an example component --> */}
       <div className="container mx-auto rounded-lg shadow-lg">
-        {/* <!-- headaer --> */}
-
-        {/* <!-- end header --> */}
-        {/* <!-- Chatting --> */}
         <div className="flex flex-row justify-between ">
-          {/* <!-- chat list --> */}
           <div className="hidden w-2/5 flex-col overflow-y-auto border-r-2 md:block ">
-            {/* <!-- search compt --> */}
             <div className="border-b-2 px-2 py-4">
               <input
                 type="text"
@@ -146,8 +142,6 @@ export default function Room({ params }: { params: { slug: string } }) {
                 className="w-full rounded-2xl border-2 border-gray-200 px-2 py-2"
               />
             </div>
-            {/* <!-- end search compt --> */}
-            {/* <!-- user list --> */}
 
             <ul role="list" className="divide-y divide-gray-100">
               {chats.map((chat) => (
@@ -190,10 +184,8 @@ export default function Room({ params }: { params: { slug: string } }) {
                 </li>
               ))}
             </ul>
-            {/* <!-- end user list --> */}
           </div>
-          {/* <!-- end chat list -->
-      <!-- message --> */}
+
           <div className="flex w-full flex-col justify-between px-5">
             <div className="mt-5 flex flex-col">
               {chat.messages.map((message) => (
@@ -212,48 +204,37 @@ export default function Room({ params }: { params: { slug: string } }) {
                 </>
               ))}
             </div>
-            <div className="py-5">
-              <input
-                className="w-full rounded-xl bg-gray-300 px-3 py-5"
-                type="text"
-                placeholder="type your message here..."
+            <div className="w-full rounded-xl bg-gray-300 px-3 py-2 py-5">
+              <InputEmoji
+                value={text}
+                onChange={setText}
+                cleanOnEnter={true}
+                // placeholder="..."
+                fontSize={14}
+                height={120}
               />
             </div>
           </div>
-          {/* <!-- end message --> */}
           <div className="hidden w-2/5 border-l-2 px-5 md:block">
             <div className="flex flex-col">
               <div className=" py-4 text-xl font-semibold ">
-                Mern Stack Group
+                {chat.name || chat.author.name}
               </div>
-              <img
-                src="https://source.unsplash.com/L2cxSuKWbpo/600x600"
+              <Image
+                src={chat.avatar || chat.author.avatar}
                 className="h-64 rounded-xl object-cover"
+                height={256}
+                width={256}
                 alt=""
               />
-              <div className="py-4 font-semibold">Created 22 Sep 2021</div>
+              <div className="py-4 font-semibold">Created {chat.createdAt}</div>
               <div className="font-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deserunt, perspiciatis!
+                {chat.description || chat.author.email}
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* <div className="border-1  w-full border-2 border-red-600">
-        <h2 className="mt-6 w-full text-center font-bold">
-          Room: {params.slug}
-        </h2>
-        <InputEmoji
-          value={text}
-          onChange={setText}
-          cleanOnEnter
-          placeholder="Type a message"
-        />
-
-        <pre>{JSON.stringify(params, null, 4)}</pre>
-      </div> */}
     </>
   );
 }

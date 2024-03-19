@@ -101,7 +101,7 @@ const chat = {
       // externaId:
     },
     {
-      id: 3,
+      id: 4,
       author: {
         id: 2,
         avatar: "https://source.unsplash.com/vpOeXr5wmR4/600x600",
@@ -113,7 +113,7 @@ const chat = {
       // externaId:
     },
     {
-      id: 3,
+      id: 5,
       author: {
         id: 2,
         avatar: "https://source.unsplash.com/vpOeXr5wmR4/600x600",
@@ -134,7 +134,7 @@ export default function Room({ params }: { params: { slug: string } }) {
     <>
       <div className="container mx-auto rounded-lg shadow-lg">
         <div className="flex flex-row justify-between ">
-          <div className="hidden w-2/5 flex-col overflow-y-auto border-r-2 md:block ">
+          <div className="hidden w-2/5 flex-col overflow-y-auto border-r-2 lg:block ">
             <div className="border-b-2 px-2 py-4">
               <input
                 type="text"
@@ -167,7 +167,7 @@ export default function Room({ params }: { params: { slug: string } }) {
                         </p>
                       </div>
                     </div>
-                    <div className="shrink-0 sm:flex sm:flex-col sm:items-end">
+                    <div className="shrink-0 sm:flex sm:flex-col sm:items-center">
                       <p className="text-sm leading-6 text-gray-900">
                         {chat.email || "Group"}
                       </p>
@@ -189,7 +189,7 @@ export default function Room({ params }: { params: { slug: string } }) {
           <div className="flex w-full flex-col justify-between px-5">
             <div className="mt-5 flex flex-col">
               {chat.messages.map((message) => (
-                <>
+                <div key={`${message.id}-message`}>
                   {message.author.id == 1 ? (
                     <OutcomeMessage
                       text={message.text}
@@ -201,21 +201,21 @@ export default function Room({ params }: { params: { slug: string } }) {
                       avatar={message.author.avatar}
                     />
                   )}
-                </>
+                </div>
               ))}
             </div>
-            <div className="w-full rounded-xl bg-gray-300 px-3 py-2 py-5">
-              <InputEmoji
+            <div className="w-full rounded-xl bg-gray-300 px-3 py-5">
+              {/* <InputEmoji
                 value={text}
                 onChange={setText}
                 cleanOnEnter={true}
                 // placeholder="..."
                 fontSize={14}
                 height={120}
-              />
+              /> */}
             </div>
           </div>
-          <div className="hidden w-2/5 border-l-2 px-5 md:block">
+          <div className="hidden w-2/5 border-l-2 px-5 lg:block">
             <div className="flex flex-col">
               <div className=" py-4 text-xl font-semibold ">
                 {chat.name || chat.author.name}

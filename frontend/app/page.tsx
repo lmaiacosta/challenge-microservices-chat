@@ -1,16 +1,28 @@
 export default function Home() {
   return (
     <>
-      <div className="text-blue">
-        <h2 className="mt-6 font-bold">
+      <div className="">
+        <h2 className="mt-6 ">
           Open Source code to create a full chat with diferent tecnologies on a
           microservice structure.
         </h2>
+        <p>
+          The standard Lorem Ipsum passage, used since the 1500s
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
         <div className="p-5 font-bold">
-          <h3 className="p-6 ">Tecnologies:</h3>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-              <h4 className="rounded-lg border-2 border-blue-700">Frontend</h4>
+          <h3 className="p-6 text-base">Tecnologies:</h3>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div className="text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:text-left">
+              <h4 className="text-base">Frontend</h4>
               <ul className="underline">
                 <li>React</li>
                 <li>Next.js</li>
@@ -20,7 +32,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+            <div className="text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:text-left">
               <h4>Backend</h4>
               <ul className="underline">
                 <li>Node</li>
@@ -31,7 +43,7 @@ export default function Home() {
                 <li>Mysql</li>
               </ul>
             </div>
-            <div className="text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+            <div className="text-center lg:mb-0 lg:w-full lg:max-w-5xl  lg:text-left">
               <h4>Infrastructure and Authentication</h4>
               <ul className="underline">
                 <li>Docker</li>

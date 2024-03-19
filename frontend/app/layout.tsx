@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="flex h-full w-full flex-col">
+        <div className="flex h-full w-full flex-col lg:container md:mx-auto">
           {/* <div className="mt-14 flex-col items-center justify-between border-2 border-blue-700 "> */}
           <div className="mt-14 flex-col items-center justify-between">
             <Header />
